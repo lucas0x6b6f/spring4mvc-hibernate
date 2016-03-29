@@ -89,6 +89,7 @@ Run Project on Server
 ![image](https://github.com/lucas0x6b6f/spring4mvc-hibernate/blob/master/src/main/resources/image/index.png)
 
 ###2.Add User
+addUser
 ``` JAVA
 		public void saveOrUpdateUser(User user) {
 	        	getSessionFactory()
@@ -96,9 +97,10 @@ Run Project on Server
 	    }
 ``` 
 ![image](https://github.com/lucas0x6b6f/spring4mvc-hibernate/blob/master/src/main/resources/image/add.png)
-addUser
+
 
 ###3.Update User
+getUser
 ``` JAVA
 	public User getUser(String username) {
 		List<User> users = new ArrayList<User>();
@@ -114,7 +116,7 @@ addUser
 ``` 
 >
 
-updateUser
+updateUser (saveOrUpdateUser)
 ``` JAVA
 public void saveOrUpdateUser(User user) {
 	        	getSessionFactory()
@@ -122,7 +124,7 @@ public void saveOrUpdateUser(User user) {
 	    }
 ``` 
 ![image](https://github.com/lucas0x6b6f/spring4mvc-hibernate/blob/master/src/main/resources/image/update.png)
-getUser
+
 
 
 ###4.Count (Group by)
