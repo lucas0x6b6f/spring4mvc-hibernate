@@ -22,6 +22,7 @@ Changing setting of database connection.
 		<property name="password" value="P@ssw0rd" />
 	</bean>
 ```
+>
 
 mappingResources
 ``` XML
@@ -31,6 +32,7 @@ mappingResources
 			</list>
 	</property>
 ```
+>
 
 transactionManager
 ``` XML
@@ -38,7 +40,8 @@ transactionManager
 	  class = "org.springframework.orm.hibernate4.HibernateTransactionManager">
         <property name = "sessionFactory" ref = "sessionFactory" />
     </bean>
-<tx:annotation-driven transaction-manager="transactionManager"/>	
+    
+	<tx:annotation-driven transaction-manager="transactionManager"/>	
 ```
 
 
@@ -70,13 +73,11 @@ mapping from database.
 
 ```
 
-
 Run Project on Server
 -----------------------------
 [http://localhost:8080/spring4mvc-hibernate/](http://localhost:8080/spring4mvc-hibernate/)
 
-1.Show All Users
-![image](https://github.com/lucas0x6b6f/spring4mvc-hibernate/blob/master/src/main/resources/image/index.png)
+###1.Show All Users
 ``` JAVA
 		public List<User> getUsers() {
 		List<User> users = new ArrayList<User>();
@@ -85,19 +86,19 @@ Run Project on Server
 	}
 
 ``` 
+![image](https://github.com/lucas0x6b6f/spring4mvc-hibernate/blob/master/src/main/resources/image/index.png)
 
-2.Add User
-![image](https://github.com/lucas0x6b6f/spring4mvc-hibernate/blob/master/src/main/resources/image/add.png)
-addUser
+###2.Add User
 ``` JAVA
 		public void saveOrUpdateUser(User user) {
 	        	getSessionFactory()
 				.getCurrentSession().saveOrUpdate(user.getUsername(), user);
 	    }
 ``` 
-3.Update User
-![image](https://github.com/lucas0x6b6f/spring4mvc-hibernate/blob/master/src/main/resources/image/update.png)
-getUser
+![image](https://github.com/lucas0x6b6f/spring4mvc-hibernate/blob/master/src/main/resources/image/add.png)
+addUser
+
+###3.Update User
 ``` JAVA
 	public User getUser(String username) {
 		List<User> users = new ArrayList<User>();
@@ -111,6 +112,7 @@ getUser
 		}
 		}
 ``` 
+>
 
 updateUser
 ``` JAVA
@@ -119,10 +121,11 @@ public void saveOrUpdateUser(User user) {
 				.getCurrentSession().saveOrUpdate(user.getUsername(), user);
 	    }
 ``` 
+![image](https://github.com/lucas0x6b6f/spring4mvc-hibernate/blob/master/src/main/resources/image/update.png)
+getUser
 
 
-4.Count (Group by)
-![image](https://github.com/lucas0x6b6f/spring4mvc-hibernate/blob/master/src/main/resources/image/package-explorer.png)
+###4.Count (Group by)
 ``` JAVA
 	public List<Count> getCount() {
 		Session session = getSessionFactory().getCurrentSession() ;
@@ -136,3 +139,4 @@ public void saveOrUpdateUser(User user) {
 		return results ;
 	}
 ``` 
+![image](https://github.com/lucas0x6b6f/spring4mvc-hibernate/blob/master/src/main/resources/image/count.png)
