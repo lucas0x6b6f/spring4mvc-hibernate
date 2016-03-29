@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.lucasko.model.User" table="users" >
+		<id name="username" type="string">
+			<column name="username" length="45" />
+			<generator class="assigned" />
+		</id>
+		<property name="gender" type="boolean">
+			<column name="gender" not-null="true" />
+		</property>
+
+		<property name="team" type="string">
+			<column name="team" length="10" not-null="true"  />
+		</property>
+		
+		<property name="tel" type="string">
+			<column name="tel" length="11"  not-null="true"  />
+		</property>
+
+	</class>
+</hibernate-mapping>
